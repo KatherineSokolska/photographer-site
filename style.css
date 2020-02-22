@@ -243,17 +243,6 @@ nav {
     position: relative;
 }
 
-.gallery-head {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    background: var(--bg-color);
-    padding: 5rem 8rem;
-    text-align: center;
-}
-
 .gallery img {
     width: 100%;
     height: 100%;
@@ -279,6 +268,9 @@ nav {
 
 .contact img {
     flex: 1 1 40rem;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
 }
 
 .form-wrapper {
@@ -371,6 +363,21 @@ footer h4 {
 .burger,
 .menu-check {
     display: none;
+}
+
+@media screen and (max-width: 576px){
+    .form-wrapper h2 {
+        margin: 3rem 0;
+    }
+
+    .form-wrapper input {
+        margin: 1rem 0 2rem 0;
+        padding: 1.3rem;
+    }
+    
+    .form-wrapper button {
+        padding: 1.3rem 8rem;
+    }
 }
 
 @media screen and (max-width:842px){
@@ -469,11 +476,6 @@ footer h4 {
         display: none;
     }
 
-    /* contacts */
-    .contact img {
-        display: none;
-    }
-
 
     /* footer */
 
@@ -488,9 +490,23 @@ footer h4 {
     }
 }
 
+@media screen and (min-width: 842px) and (max-width: 1024px){
+    .contact {
+        min-height: 60vh;
+        padding-bottom: 5rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    /* contacts */
+    .contact img {
+        display: none;
+    }
+}
+
 @media screen and (min-width:1700px){
     html {
-        --header1: 3rem;
+        --header1: 5rem;
         --keader2: 4.5rem;
         --header3: 3.5rem;
         --header4: 2.5rem;

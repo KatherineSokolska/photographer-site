@@ -51,7 +51,7 @@
             </div>
         </section>
 
-        <section class="about">
+        <section class="about" id='about'>
             <div class="about-image">
                 <h5>minimal</h5>
                 <img src="img/about-image.png" alt="Portrait picture">
@@ -60,34 +60,31 @@
                 <h2>Elena Joy</h2>
                 <div class="about-life">
                     <h3>My life</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, cumque. Temporibus maxime neque
-                        molestias atque distinctio eum earum, ab ullam.</p>
+                    <p>My life is dedicated to art and photography. I live to find beauty in things around and show it
+                        to other people. From my childhood whan I got my first camera I was fond of taking pictures of
+                        nature and people aroud, catching special moments in eeryday life. </p>
                 </div>
                 <div class="about-work">
                     <h3>My work</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum numquam magni quam ullam
-                        sapiente quasi quod dolore tenetur! Labore, ex!</p>
+                    <p>I shoot social events, concerts, film premieres, fashion shows. I work with publishers, web
+                        portals, and advertising agencies.</p>
                 </div>
                 <div class="about-contact">
                     <h3>Get in touch</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum numquam magni quam ullam
-                        sapiente quasi quod dolore tenetur! Labore, ex!</p>
+                    <p>If you want me to come to your place and make a wonderfool photoshoot - please use the form below
+                        to contact me. I reply every request.</p>
                 </div>
             </div>
         </section>
 
-        <section class="gallery">
-            <header class="gallery-head">
-                <h2>Quality Photography</h2>
-                <p>My works to see</p>
-            </header>
+        <section class="gallery" id='work'>
             <img class="gallery1" src="img/gallery/gallery-1.jpg" alt="man in suite">
             <img class="gallery2" src="img/gallery/gallery-2.jpg" alt="lady in coat">
             <img class="gallery3" src="img/gallery/gallery-3.jpg" alt="lady in dress">
             <img class="gallery4" src="img/gallery/gallery-4.jpg" alt="lady in jacket">
         </section>
 
-        <section class="contact">
+        <section class="contact" id='contact'>
             <div class="form-wrapper flex">
                 <h2>Get in <br>
                     <span>touch.</span></h2>
@@ -110,6 +107,20 @@
             </ul>
         </footer>
     </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $('a[href*="#"]').on('click', function (e) {
+            e.preventDefault()
+
+            $('html, body').animate({
+                    scrollTop: $($(this).attr('href')).offset().top,
+                },
+                500,
+                'linear'
+            )
+        })
+    </script>
 </body>
 
 </html>
