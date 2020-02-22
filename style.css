@@ -29,10 +29,11 @@ html {
     --header2: calc(3.5rem + 1vw);
     --header3: calc(3rem + 1vw);
     --header4: calc(2rem + 1vw);
-    --text: calc(1.5rem + 1vw);
+    --text: calc(1.5rem + 0.5vw);
     --big: calc(10rem + 1vw);
 
     --special-color: #906272;
+    --special-color-dark: #6b404f;
     --bg-color: #414141;
     --grey-text: #6e6e6e;
 }
@@ -96,7 +97,7 @@ h1 {
 
 /* Nav section */
 .main-head {
-    box-shadow: 0 10px 10px rgba(0,0,0,.15);
+    box-shadow: 0 10px 10px rgba(39, 21, 33, 0.05);
     position: relative;
     z-index: 2;
 }
@@ -119,6 +120,30 @@ nav {
     display: flex;
     justify-content:space-around;
     flex: 1 1 20rem;
+}
+
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 4px;
+    background: var(--special-color);
+    transition: width .2s ease-in;
+}
+
+.nav-links li:hover a {
+    color: var(--special-color);
+}
+
+.nav-links li:hover a:after {
+    width: 100%;
 }
 
 /* Hero section */
@@ -145,6 +170,10 @@ nav {
     text-align: center;
 }
 
+.hero-introduction h2 {
+    color: var(--special-color);
+}
+
 .hero-introduction p {
     padding: 5rem 10rem;
     color: var(--grey-text);
@@ -158,6 +187,14 @@ nav {
     padding: 1.2rem 3.5rem;
     border: 3px solid black;
     margin-bottom: 4rem;
+    transition: border-color .2s ease, background .2s ease;
+}
+
+.hero-introduction a:hover,
+.hero-introduction a:focus {
+    color: #fff;
+    border-color: var(--special-color);
+    background: var(--special-color);
 }
 
 .hero-elena {
@@ -218,6 +255,10 @@ nav {
     justify-content: space-around;
     background: var(--bg-color);
     color: #fff;
+}
+
+.about-text  P {
+    color: rgb(168, 162, 162);
 }
 
 .about-text div {
@@ -305,6 +346,12 @@ nav {
     background: var(--special-color);
     color: #fff;
     border: none;
+    cursor: pointer;
+    transition: background .15s ease-in;
+}
+
+.form-wrapper button:hover {
+    background: var(--special-color-dark);
 }
 
 
@@ -328,7 +375,16 @@ footer ul {
 
 footer h4 {
     flex: 4 1 40rem;
-    font-size: calc(1.4rem + 1vw);
+    font-size: calc(1.4rem + .4vw);
+    font-weight: 400;
+}
+
+footer a {
+    opacity: .6;
+}
+
+footer a:hover {
+    opacity: 1;
 }
 
 /* animations */
@@ -402,8 +458,8 @@ footer h4 {
     .nav-links a {
         color: #fff;
         font-size: var(--header3);
-        text-decoration: underline;
     }
+
     .burger span {
         display: block;
         padding: 0.2rem 1.9rem;
@@ -510,7 +566,7 @@ footer h4 {
         --keader2: 4.5rem;
         --header3: 3.5rem;
         --header4: 2.5rem;
-        --text: 3rem;
+        --text: 2.4rem;
         --big: 10rem;
     }
 }
